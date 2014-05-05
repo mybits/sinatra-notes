@@ -14,7 +14,15 @@ get '/hello/:name' do
 end
 
 get '/more/*' do
-  # That a wildcard
+  # That's a wildcard
   params[:splat]
+end
+
+get '/form' do
+  erb :form
+end
+
+post '/form/' do
+  "That was your message: '#{params[:message]}'"
 end
 
