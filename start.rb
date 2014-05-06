@@ -26,3 +26,14 @@ post '/form/' do
   "That was your message: '#{params[:message]}'"
 end
 
+get '/secret' do
+  erb :secret
+end
+
+post '/secret' do
+  params[:secret].reverse
+end
+
+get '/decrypt/:secret' do
+  params[:secret].reverse
+end
