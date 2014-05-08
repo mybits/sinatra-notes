@@ -39,7 +39,6 @@ get '/decrypt/:secret' do
 end
 
 not_found do
-  status 404
-  'not found'
+  halt 404, "Sorry, that page doesn't exist!"
 end
 
