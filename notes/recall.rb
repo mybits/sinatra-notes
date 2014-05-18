@@ -36,3 +36,12 @@ get '/:id' do
   @title = "Edit note ##{params[:id]}"
   erb :edit
 end
+
+put '/:id' do
+  n = Note.get params[:id]
+  n.content = params[:content]
+  n.complete = params[:complete] ? 1 : 0
+  n.updated_at = Time.now
+  n.save
+  redirect '/'
+end
